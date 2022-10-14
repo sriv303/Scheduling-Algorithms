@@ -1,0 +1,21 @@
+class Job:
+    def __init__(self, burstTime, arrivalTime):
+        self.burstTime = burstTime
+        self.arrivalTime = arrivalTime
+
+p1 = Job(3,0)
+p2 = Job(2,1)
+p3 = Job(7,2)
+
+orderlist = [p1, p2, p3]
+elapsed = 0
+
+
+def Waiting_Time(orderlist):
+    elapsed = 0
+    for job in orderlist:
+        elapsed += job.burstTime
+        print(job.arrivalTime + 1, end="     ")
+        print(elapsed)
+
+Waiting_Time(orderlist)
