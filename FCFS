@@ -1,7 +1,6 @@
 jobl = []
 
 class Job:
-    _counter = 0 
     def __init__(self, burstTime, arrivalTime):
         self.burstTime = burstTime
         self.arrivalTime = arrivalTime
