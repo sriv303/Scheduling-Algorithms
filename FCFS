@@ -1,25 +1,35 @@
+jobl = []
 
 class Job:
     _counter = 0 
     def __init__(self, burstTime, arrivalTime):
         self.burstTime = burstTime
         self.arrivalTime = arrivalTime
-        Job._counter +=1
-        self.id = Job._counter
+        jobl.append(self)
 
-p1 = (3,0)
-p2 = (2,1)
-p3 = (7,2)
+p1 = Job(3,0)
+p2 = Job(2,1)
+p3 = Job(7,2)
+p4 = Job(8,3)
+p5 = Job(9,6)
+p6 = Job(2, 5)
 
-jobl = [Job]
-    
+jobl.sort(key=lambda x: x.arrivalTime)
+print(*[x.arrivalTime for x in jobl])
 
 def WaitingTime(orderlist):
     elapsed = 0
-    for job in orderlist:
-        elapsed += job.burstTime
-        print(elapsed)
+    for i in range(0, len(orderlist)):
+        if i == 0:
+            print(elapsed)
+        else:
+            elapsed += orderlist[i-1].burstTime
+            print(elapsed)
+    return elapsed
 
-WaitingTime(orderlist)
+totalElapsed = WaitingTime(jobl)
 
+def AverageWaitingTime(totalWaitTime):
+    return round(totalWaitTime/len(jobl), 2)
 
+print(AverageWaitingTime(totalElapsed))
