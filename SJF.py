@@ -11,3 +11,21 @@ jobl = joblist
 
 jobl.sort(key = lambda x:x.burstTime)
 print(*[x.burstTime for x in jobl])
+
+def WaitingTime(orderlist): #prints out waiting time for each joib
+    elapsed = 0
+    for i in range(0, len(orderlist)): #makes sure to start first job at 0
+        if i == 0:
+            print(elapsed)
+        else:
+            elapsed += orderlist[i-1].burstTime #adds previous burstTime
+            print(elapsed)
+    return elapsed #returns total time elapsed after all jobs complete
+
+totalElapsed = WaitingTime(jobl)
+
+def AverageWaitingTime(totalWaitTime):
+    return round(totalWaitTime/len(jobl), 2)
+    #calculates avg wait by finding total time elapsed and dividing by no. jobs
+
+print(AverageWaitingTime(totalElapsed))
