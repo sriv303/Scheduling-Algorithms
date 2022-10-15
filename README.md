@@ -1,3 +1,4 @@
 # Scheduling-Algorithms
 
-This is a couple of scheduling algorithms to calculate the waiting time, average waiting time and other characteristics of jobs under various scheduling algorithms.
+SJF (Shortest Job First - Non-preemptive)
+    Executes jobs that arrived at the same time starting with the shortest job first to minimise average waiting time.
