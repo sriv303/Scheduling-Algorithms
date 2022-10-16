@@ -37,3 +37,4 @@ print(AverageWaitingTime(totalElapsed))
 #keeps on doing that every "unit" of arrival time
 #and if equal continues job
 #reorders list every "unit" of time
+#so keeps on updating list to check for shorter burst times
