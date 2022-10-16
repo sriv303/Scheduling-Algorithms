@@ -29,3 +29,11 @@ def AverageWaitingTime(totalWaitTime):
     #calculates avg wait by finding total time elapsed and dividing by no. jobs
 
 print(AverageWaitingTime(totalElapsed))
+
+#preemptive
+#takes arrival time
+#orders
+#sees which one is shortest
+#keeps on doing that every "unit" of arrival time
+#and if equal continues job
+#reorders list every "unit" of time
